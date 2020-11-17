@@ -1,0 +1,219 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <section id="new">
+        <div class="week">
+            <div day="none">
+                <p style="padding-top: 10px;"></p>
+                <div class="hour">8:00</div>
+                <div class="hour">10:00</div>
+                <div class="hour">12:00</div>
+                <div class="hour">14:00</div>
+                <div class="hour">16:00</div>
+            </div>
+
+            <div day="mon">
+                <p>Montag</p>
+
+                <div class="hour"></div>
+                <a class="hour V" lection="ME" href="https://fu-berlin.webex.com/fu-berlin-en/j.php?MTID=m86e32d4422e8a8269a2cd89d6d519af7" target="_blank">
+                    <p>Mustererkennung</p>
+                </a>
+                <div class="hour"></div>
+                <a href="https://fu-berlin.webex.com/fu-berlin-en/j.php?MTID=mee851b7c2b8eabebe748332119ba4448" target="_blank" class="hour T" lection="ME">
+                    <p>Mustererkennung</p>
+                </a>
+
+            </div>
+
+            <div day="die">
+                <p> Dienstag </p>
+
+                <div class="hour"></div>
+                <a href="https://fu-berlin.webex.com/fu-berlin/j.php?MTID=m98ac46663ed1b5f60782417ca35823ed" target="_blank" class="hour V" lection="IOT">
+                    <p>IOT-Security</p>
+                </a>
+                <a href="https://fu-berlin.webex.com/fu-berlin-en/j.php?MTID=mbc39e6d8e545b8099f394bd4d3f253d6" target="_blank" class="hour V" lection="QA">
+                    <p>Quanten Alg. &Sec</p>
+                </a>
+                <a href="https://fu-berlin.webex.com/fu-berlin-en/j.php?MTID=m46fc94ea39575c6e37236b147fc24b6c" target="_blank" class="hour V" lection="SWP">
+                    <p>SWP: Telematik</p>
+                </a>
+            </div>
+
+            <div day="mit">
+                <p>Mittwoch</p>
+
+                
+                <div class="hour"></div>
+                <div class="hour"></div>
+                <a href="https://fu-berlin.webex.com/fu-berlin/j.php?MTID=m405a5b5d0ac59d4444a5f865cab17ad7" target="_blank" class="hour T" lection="QA">
+                    <p>Quanten Alg. &Sec</p>
+                </a>
+
+            </div>
+
+            <div day="don">
+                <p>Donnerstag</p>
+
+                <div class="hour"></div>
+                <a href="https://fu-berlin.webex.com/fu-berlin/j.php?MTID=m98ac46663ed1b5f60782417ca35823ed" target="_blank" class="hour T" lection="IOT">
+                    <p>IOT-Security</p>
+                </a>
+                <div class="hour"></div>
+                <a href="https://fu-berlin.webex.com/fu-berlin-en/j.php?MTID=mdec18d035b16087373784d936bbd06d0" target="_blank" class="hour V" lection="INT">
+                    <p>Internet Tech</p>
+                </a>
+
+            </div>
+
+            <div day="fre">
+                <p>Freitag</p>
+            </div>
+        </div>
+
+        <style>
+            .week{
+                font-family: sans-serif;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding-top: 4em;
+            }
+
+            [day]{
+                padding: .7em;
+                border-right: 1px solid gray;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            [day]>p{
+                margin: -1em 1em 2em 1em;
+                font-weight: 600;
+            }
+
+            .hour{
+                margin: 10px;
+                flex-basis: 5em;
+            }
+
+            .V{
+                
+            }
+
+            .T{
+                opacity: 0.7;
+            }
+
+            [lection] {
+                border-radius: 1em;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+            }
+
+            [lection]:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+                transform: scale(1.1);
+            }
+
+            [lection]>*{
+                padding: 1em;
+            }
+
+            [lection=ME]{
+                background-color:crimson;
+                color: white;
+            }
+            [lection=IOT]{
+                background-color:cornflowerblue;
+                color: white;
+            }
+            [lection=QA]{
+                background-color:darkorchid;
+                color: white;
+            }
+            [lection=SWP]{
+                background-color:goldenrod;
+                color: white;
+            }
+            [lection=INT]{
+                background-color:rgb(90, 180, 0);
+                color: white;
+            }  
+
+            a{
+                text-decoration: none;
+            }          
+
+        </style>
+    </section>
+
+
+<!--ab hier ist alles alt bzw unnötig (bis auf die letzten 2 end-tags)-->
+    <div hidden id="old">
+        <button onclick="Open('hci1')">Human-Computer Interaction 1</button>
+        <button onclick="Open('cg')">Computergrafik</button>
+        <button onclick="Open('mkk')">Mobilkommunikation</button>
+        <button onclick="Open('bvm')">Bilderverfahren Medizin</button>
+        </br>
+    </div>
+    
+
+<script>
+    function Open(folder){
+        var websites;
+        console.log(folder);
+        switch (folder){
+            case 'hci1':
+                websites = [
+                    'https://fu-berlin.eu.vbrickrev.com/#/media/all?team=992da13c-9319-4fb7-8278-cd197a3bed33',
+                    'https://git.imp.fu-berlin.de/hcc/hci1-sose-2020/-/wikis/home',
+                    'https://fu-berlin.webex.com/fu-berlin/e.php?MTID=m5b988785cb32c58f82bf5013c5fc346c',
+                    ];
+                break;
+            case 'cg':
+                websites = [
+                    'https://fu-berlin.webex.com/fu-berlin/j.php?MTID=m9528ff58be127cef5bd19885675f9cc8',
+                    'https://fu-berlin.webex.com/fu-berlin-en/j.php?MTID=mab4964358270097e2de95b3681c4c5cc',
+                    'https://mycampus.imp.fu-berlin.de/x/xkKcmK',
+                    ];
+                break;
+            case 'mkk':
+                websites = [
+                    'https://mycampus.imp.fu-berlin.de/portal/site/093da878-ba4a-4bbf-b58a-a40e8ff3ee23',
+                    'https://fu-berlin.webex.com/fu-berlin-en/j.php?MTID=meec1a9ee6a268fb59ad476ffb5c29616'
+                    ];
+                break;
+            case 'bvm':
+                websites = [
+                    'https://mycampus.imp.fu-berlin.de/portal/site/55168626-bc0d-446c-8068-d47141e33d12',
+                    'https://wikiblog.charite.de/confluence/pages/viewpage.action?pageId=43534017',
+                    'https://www.overleaf.com/project/5ea09ce0d0bfaa0001da5cc3'
+                    ];
+                break;
+        }
+        function oopen_subr(x){
+            console.log(x-1);
+            if(x<=-1){
+            console.log('the end');return;}
+            else{
+            window.open(websites[x],websites[x]);
+            setTimeout(() => {
+                oopen_subr(x-1);
+            }, 200);
+            }
+        }
+        oopen_subr(websites.length-1);
+        return;
+    }
+</script>
+
+</body>
+
+</html>
