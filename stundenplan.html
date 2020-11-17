@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stundenplan</title>
 </head>
 <body>
 
@@ -62,11 +62,11 @@
                 <p>Donnerstag</p>
 
                 <div class="hour"></div>
-                <a href="https://fu-berlin.webex.com/fu-berlin/j.php?MTID=m98ac46663ed1b5f60782417ca35823ed" target="_blank" class="hour T" lection="IOT">
+                <a href="https://fu-berlin.webex.com/fu-berlin/j.php?MTID=m98ac46663ed1b5f60782417ca35823ed" target="_blank" class="hour T C" lection="IOT">
                     <p>IOT-Security</p>
                 </a>
                 <div class="hour"></div>
-                <a href="https://fu-berlin.webex.com/fu-berlin-en/j.php?MTID=mdec18d035b16087373784d936bbd06d0" target="_blank" class="hour V" lection="INT">
+                <a href="https://fu-berlin.webex.com/fu-berlin-en/j.php?MTID=mdec18d035b16087373784d936bbd06d0" target="_blank" class="hour V C" lection="INT">
                     <p>Internet Tech</p>
                 </a>
 
@@ -100,7 +100,7 @@
 
             .hour{
                 margin: 10px;
-                flex-basis: 5em;
+                flex: 0 0 6em;
             }
 
             .V{
@@ -109,6 +109,10 @@
 
             .T{
                 opacity: 0.7;
+            }
+
+            .C{
+                border: 2px solid grey;
             }
 
             [lection] {
@@ -152,6 +156,20 @@
             }          
 
         </style>
+
+        <script>
+            String.prototype.cssSetAlpha=function(alpha){
+                if(this[3]=='a') 
+                    return this.replace(/[\d\.]+\)$/g, alpha+')')
+                return this.replace(/\)$/g, ','+alpha+')')
+            }
+            document.querySelectorAll('.C').forEach(call=>{
+                let bgColor=window.getComputedStyle(call,null).getPropertyValue('background-color')
+                call.style.backgroundColor = bgColor.cssSetAlpha(0.3)
+                call.style.borderColor = bgColor
+                call.style.color = bgColor
+            })
+        </script>
     </section>
 
 
