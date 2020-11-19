@@ -9,7 +9,10 @@
     <section id="new">
         <div class="week">
             <div day="none">
-                <p style="padding-top: 10px;"></p>
+
+                <div id="time"></div>
+
+                <p style="padding-top: 0px;"></p>
                 <div class="hour">8:00</div>
                 <div class="hour">10:00</div>
                 <div class="hour">12:00</div>
@@ -101,6 +104,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
+                align-items: flex-end;
             }
             [day]>p{
                 margin: -1em 1em 2em 1em;
@@ -166,7 +170,13 @@
 
             a{
                 text-decoration: none;
-            }          
+            }    
+
+            #time{
+                height: 0;
+                color: red;
+                padding-right: 5em;
+            }      
 
         </style>
 
@@ -182,6 +192,33 @@
                 call.style.borderColor = bgColor
                 call.style.color = bgColor.cssSetAlpha(1)
             })
+
+            let timeElem = document.getElementById("time")
+
+            Node.prototype.setPercentageInParent_Height=function(percent){
+                this.style.position="relative"
+                this.style.top=this.parentElement.clientHeight*percent + "px"
+            }
+
+            Date.prototype.getPercentBetween=function(since,to){return (this-since)/(to-since)}
+            Date.prototype.getPercentBetweenHours=function(sinceH=8,toH=18){
+                let since=new Date()
+                    since.setSeconds(0)
+                    since.setMinutes(0)
+                    since.setHours(sinceH)
+                let to=new Date()
+                    to.setSeconds(0)
+                    to.setMinutes(0)
+                    to.setHours(toH)
+                return this.getPercentBetween(since,to)
+            }
+            
+            setInterval(()=>{
+                let now = new Date()
+                timeElem.innerHTML=now.toLocaleTimeString()
+                timeElem.style.top=0;
+                timeElem.setPercentageInParent_Height(now.getPercentBetweenHours())
+            },1000)
         </script>
     </section>
 
