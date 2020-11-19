@@ -20,7 +20,7 @@
                 <div class="hour">16:00</div>
             </div>
 
-            <div day="mon">
+            <div day="1">
                 <p>Montag</p>
 
                 <div class="hour"></div>
@@ -36,7 +36,7 @@
 
             </div>
 
-            <div day="die">
+            <div day="2">
                 <p> Dienstag </p>
 
                 <div class="hour"></div>
@@ -51,7 +51,7 @@
                 </a>
             </div>
 
-            <div day="mit">
+            <div day="3">
                 <p>Mittwoch</p>
 
                 
@@ -66,7 +66,7 @@
 
             </div>
 
-            <div day="don">
+            <div day="4">
                 <p>Donnerstag</p>
 
                 <div class="hour"></div>
@@ -80,7 +80,7 @@
 
             </div>
 
-            <div day="fre">
+            <div day="5">
                 <p>Freitag</p>
                 <div class="hour"></div>
                 <a href="https://discord.com/channels/774937915746680842/774937915746680845" target="_blank" class="hour C" lection="QAS">
@@ -100,7 +100,7 @@
 
             [day]{
                 padding: .7em;
-                border-right: 1px solid gray;
+                
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
@@ -226,6 +226,13 @@
                 timeElem.innerHTML=now.toLocaleTimeString()+' __'
                 timeElem.style.top=0;
                 timeElem.setPercentageInParent_Height(now.getPercentBetweenHours())
+                let dayStyle = document.querySelector('[day="'+now.getDay()+'"]').style
+                dayStyle.color="red"
+                //dayStyle.backgroundColor="lightpink"
+                dayStyle.borderRadius="1em"
+                dayStyle.border="1px solid red"
+                dayStyle.paddingTop="2em"
+                dayStyle.marginTop="-1.6em"
             }
             displayTime()
             setInterval(displayTime,1000)
