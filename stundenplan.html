@@ -185,66 +185,6 @@
         </script>
     </section>
 
-
-<!--ab hier ist alles alt bzw unnötig (bis auf die letzten 2 end-tags)-->
-    <div hidden id="old">
-        <button onclick="Open('hci1')">Human-Computer Interaction 1</button>
-        <button onclick="Open('cg')">Computergrafik</button>
-        <button onclick="Open('mkk')">Mobilkommunikation</button>
-        <button onclick="Open('bvm')">Bilderverfahren Medizin</button>
-        </br>
-    </div>
-    
-
-<script>
-    function Open(folder){
-        var websites;
-        console.log(folder);
-        switch (folder){
-            case 'hci1':
-                websites = [
-                    'https://fu-berlin.eu.vbrickrev.com/#/media/all?team=992da13c-9319-4fb7-8278-cd197a3bed33',
-                    'https://git.imp.fu-berlin.de/hcc/hci1-sose-2020/-/wikis/home',
-                    'https://fu-berlin.webex.com/fu-berlin/e.php?MTID=m5b988785cb32c58f82bf5013c5fc346c',
-                    ];
-                break;
-            case 'cg':
-                websites = [
-                    'https://fu-berlin.webex.com/fu-berlin/j.php?MTID=m9528ff58be127cef5bd19885675f9cc8',
-                    'https://fu-berlin.webex.com/fu-berlin-en/j.php?MTID=mab4964358270097e2de95b3681c4c5cc',
-                    'https://mycampus.imp.fu-berlin.de/x/xkKcmK',
-                    ];
-                break;
-            case 'mkk':
-                websites = [
-                    'https://mycampus.imp.fu-berlin.de/portal/site/093da878-ba4a-4bbf-b58a-a40e8ff3ee23',
-                    'https://fu-berlin.webex.com/fu-berlin-en/j.php?MTID=meec1a9ee6a268fb59ad476ffb5c29616'
-                    ];
-                break;
-            case 'bvm':
-                websites = [
-                    'https://mycampus.imp.fu-berlin.de/portal/site/55168626-bc0d-446c-8068-d47141e33d12',
-                    'https://wikiblog.charite.de/confluence/pages/viewpage.action?pageId=43534017',
-                    'https://www.overleaf.com/project/5ea09ce0d0bfaa0001da5cc3'
-                    ];
-                break;
-        }
-        function oopen_subr(x){
-            console.log(x-1);
-            if(x<=-1){
-            console.log('the end');return;}
-            else{
-            window.open(websites[x],websites[x]);
-            setTimeout(() => {
-                oopen_subr(x-1);
-            }, 200);
-            }
-        }
-        oopen_subr(websites.length-1);
-        return;
-    }
-</script>
-
 </body>
 
 </html>
