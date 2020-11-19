@@ -128,6 +128,7 @@
 
             .C{
                 border: 2px solid grey;
+                flex:  0 0 5.7em;
             }
 
             [lection] {
@@ -206,6 +207,7 @@
             Node.prototype.setPercentageInParent_Height=function(percent){
                 this.style.position="relative"
                 this.style.top=this.parentElement.clientHeight*percent + "px"
+                return this
             }
 
             Date.prototype.getPercentBetween=function(since,to){return (this-since)/(to-since)}
@@ -221,18 +223,26 @@
                 return this.getPercentBetween(since,to)
             }
 
+            var isAppended=false
+            var timechild
             function displayTime(){
                 let now = new Date()
                 timeElem.innerHTML=now.toLocaleTimeString()+' __'
                 timeElem.style.top=0;
                 timeElem.setPercentageInParent_Height(now.getPercentBetweenHours())
-                let dayStyle = document.querySelector('[day="'+now.getDay()+'"]').style
-                dayStyle.color="red"
-                //dayStyle.backgroundColor="lightpink"
-                dayStyle.borderRadius="1em"
-                dayStyle.border="1px solid red"
-                dayStyle.paddingTop="2em"
-                dayStyle.marginTop="-1.6em"
+                if(!isAppended){
+                    let day = document.querySelector('[day="'+now.getDay()+'"]')
+                    day.style.color="red"
+                    day.style.borderRadius="1em"
+                    day.style.border="1px solid red"
+                    day.style.paddingTop="2em"
+                    day.style.marginTop="-2.5em"
+                    timeChild = document.createElement('p')
+                    timeChild.style.borderBottom="1px solid red"
+                    day.insertBefore(timeChild,day.children[1])
+                    isAppended=true
+                }
+                timeChild.setPercentageInParent_Height(now.getPercentBetweenHours())
             }
             displayTime()
             setInterval(displayTime,1000)
