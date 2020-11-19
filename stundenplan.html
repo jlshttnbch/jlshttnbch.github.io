@@ -134,6 +134,7 @@
                 border-radius: 1em;
                 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
                 transition: 0.3s;
+                transition-property: transform;
             }
 
             [lection]:hover {
@@ -177,7 +178,7 @@
             #time{
                 height: 0;
                 color: red;
-                padding-right: 5em;
+                padding-right: 3.5em;
             }      
 
         </style>
@@ -217,7 +218,7 @@
 
             function displayTime(){
                 let now = new Date()
-                timeElem.innerHTML=now.toLocaleTimeString()
+                timeElem.innerHTML=now.toLocaleTimeString()+' __'
                 timeElem.style.top=0;
                 timeElem.setPercentageInParent_Height(now.getPercentBetweenHours())
             }
