@@ -10,7 +10,7 @@
         <div class="week">
             <div day="none">
 
-                <div id="time"></div>
+                <div id="time">Zeit</div>
 
                 <p style="padding-top: 0px;"></p>
                 <div class="hour">8:00</div>
@@ -214,13 +214,15 @@
                     to.setHours(toH)
                 return this.getPercentBetween(since,to)
             }
-            
-            setInterval(()=>{
+
+            function displayTime(){
                 let now = new Date()
                 timeElem.innerHTML=now.toLocaleTimeString()
                 timeElem.style.top=0;
                 timeElem.setPercentageInParent_Height(now.getPercentBetweenHours())
-            },1000)
+            }
+            displayTime()
+            setInterval(displayTime,1000)
         </script>
     </section>
 
