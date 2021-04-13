@@ -1,3 +1,6 @@
+includeHTML();
+
+
 String.prototype.cssSetAlpha=function(alpha){
     if(this[3]=='a') 
         return this.replace(/[\d\.]+\)$/g, alpha+')')
