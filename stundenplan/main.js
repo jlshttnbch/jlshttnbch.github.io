@@ -55,5 +55,4 @@ function displayTime(){
     }
     timeChild.setPercentageInParent_Height(now.getPercentBetweenHours())
 }
-displayTime()
 setInterval(displayTime,1000)
