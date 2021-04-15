@@ -21,9 +21,16 @@
     align-items: flex-end;
 }
 
+:root {
+    --hour_height:1;
+}
+
 .hour{
     margin: 10px;
-    flex: 0 0 6em;
+    flex: 0 0 calc(var(--hour_height)*6em);
+}
+.half{
+    --hour_height: 0.5;
 }
 
 .V{
@@ -39,19 +46,19 @@
     flex:  0 0 5.7em;
 }
 
-[lection] {
+[kurs] {
     border-radius: 1em;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     transition-property: transform;
 }
 
-[lection]:hover {
+[kurs]:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     transform: scale(1.1);
 }
 
-[lection]>*{
+[kurs]>*{
     padding: 1em;
 }
 

@@ -1,6 +1,6 @@
 function includeHTML() {
     var z, i, elmnt, file, xhttp;
-    /* Loop through a collection of all HTML elements: */
+    /* Loop through a colkurs of all HTML elements: */
     z = document.getElementsByTagName("*");
     for (i = 0; i < z.length; i++) {
       elmnt = z[i];
